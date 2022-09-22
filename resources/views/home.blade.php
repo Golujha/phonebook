@@ -35,65 +35,9 @@
                                 @enderror
                             </div>
                             <div class="mb-3">
-                                <label for="" class="fw-bold">Contact1</label>
-                                <input type="text" value="{{old('contact1')}}" name="contact1" placeholder="enter your contact1" class="form-control">
-                                @error("contact1")
-                                    <p>{{$message}}</p>
-                                @enderror
-                            </div>
-                            <div class="mb-3">
-                                <label for="" class="fw-bold">Contact2</label>
-                                <input type="text" value="{{old('contact2')}}" name="contact2" placeholder="enter your contact2" class="form-control">
-                                @error("contact2")
-                                    <p>{{$message}}</p>
-                                @enderror
-                            </div>
-                            <div class="mb-3">
-                                <label for="" class="fw-bold">Email</label>
-                                <input type="text" value="{{old('email')}}" name="email" placeholder="enter your email" class="form-control">
-                                @error("email")
-                                    <p>{{$message}}</p>
-                                @enderror
-                            </div>
-                            <div class="mb-3">
-                                <label for="" class="fw-bold">City</label>
-                                <input type="text" value="{{old('city')}}" name="city" placeholder="enter your city" class="form-control">
-                                @error("city")
-                                    <p>{{$message}}</p>
-                                @enderror
-                            </div>
-                            <div class="mb-3">
-                                <label for="" class="fw-bold">Maths</label>
-                                <input type="text" value="{{old('maths')}}" name="maths" placeholder="Obtained marks" class="form-control">
-                                @error("maths")
-                                    <p>{{$message}}</p>
-                                @enderror
-                            </div>
-                            <div class="mb-3">
-                                <label for="" class="fw-bold">Sci</label>
-                                <input type="text" value="{{old('sci')}}" name="sci" placeholder="Obtained marks" class="form-control">
-                                @error("sci")
-                                    <p>{{$message}}</p>
-                                @enderror
-                            </div>
-                            <div class="mb-3">
-                                <label for="" class="fw-bold">Sst</label>
-                                <input type="text" value="{{old('sst')}}" name="sst" placeholder="Obtained marks" class="form-control">
-                                @error("sst")
-                                    <p>{{$message}}</p>
-                                @enderror
-                            </div>
-                            <div class="mb-3">
-                                <label for="" class="fw-bold">Hindi</label>
-                                <input type="text" value="{{old('hindi')}}" name="hindi" placeholder="Obtained marks" class="form-control">
-                                @error("hindi")
-                                    <p>{{$message}}</p>
-                                @enderror
-                            </div>
-                            <div class="mb-3">
-                                <label for="" class="fw-bold">Eng</label>
-                                <input type="text" value="{{old('eng')}}" name="eng" placeholder="Obtained marks" class="form-control">
-                                @error("eng")
+                                <label for="" class="fw-bold">Contact</label>
+                                <input type="text" value="{{old('contact')}}" name="contact" placeholder="enter your contact" class="form-control">
+                                @error("contact")
                                     <p>{{$message}}</p>
                                 @enderror
                             </div>
@@ -110,41 +54,22 @@
                 @endif
                 <table class="table table-bordered table-striped">
                     <tr>
-                        <th>Id</th>
-                        <th>Name</th>
-                        <th>Contact1</th>
-                        <th>Contact2</th>
-                        <th>Email</th>
-                        <th>City</th>
-                        <th>Maths</th>
-                        <th>Sci</th>
-                        <th>Sst</th>
-                        <th>Hindi</th>
-                        <th>Eng</th>
-                        <th>Total</th>
-                        <th>Action</th>
+                        <th class="text-center">Id</th>
+                        <th class="text-center">Name</th>
+                        <th class="text-center">Contact</th>
+                        <th class="text-center">Action</th>
+                        
                     </tr>
                     @foreach($students as $s)
                     <tr>
-                        <td>{{$s->id}}</td>
-                        <td>{{$s->name}}</td>
-                        <td>{{$s->contact1}}</td>
-                        <td>{{$s->contact2}}</td>
-                        <td>{{$s->email}}</td>
-                        <td>{{$s->city}}</td>
-                        <td>{{$s->maths}}</td>
-                        <td>{{$s->sci}}</td>
-                        <td>{{$s->sst}}</td>
-                        <td>{{$s->hindi}}</td>
-                        <td>{{$s->eng}}</td>
+                        <td class="text-center">{{$s->id}}</td>
+                        <td class="text-center">{{$s->name}}</td>
+                        <td class="text-center">{{$s->contact}}</td>
+
                         <td>
-                            @php
-                                 echo $total = $s->maths + $s->sci + $s->sst + $s->hindi + $s->eng;
-                            @endphp
-                        </td>
-                        <td>
+                           
                             <a href="{{route('remove',['std_id'=> $s->id])}}" class="btn btn-danger btn-sm"><i class="bi bi-trash3"></i>Delete</a>
-                            <a href="{{route('view',['roll'=> $s->id])}}" class="btn btn-success btn-sm"><i class="bi bi-view-list"></i>View</a>
+                            <a href="" class="btn btn-success btn-sm"><i class="bi bi-view-list"></i>View</a>
                         </td>
                     </tr>
                     @endforeach
